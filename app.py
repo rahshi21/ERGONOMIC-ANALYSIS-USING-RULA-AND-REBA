@@ -1,17 +1,15 @@
 import cv2
 import mediapipe as mp
-import time
-import pyautogui as pgi
-from angle_calc import angle_calc
-import os
-import mimetypes
-from tkinter import *  
-from tkinter import messagebox  
-from tkinter import filedialog
 
 mpPose = mp.solutions.pose
 pose = mpPose.Pose()
 mpDraw = mp.solutions.drawing_utils
+
+import time
+import pyautogui as pgi
+from tkinter import *  
+from tkinter import messagebox  
+from tkinter import filedialog
 
 mimetypes.init()
 root=Tk()
@@ -27,9 +25,9 @@ root.configure(bg='#F1EB90')
 l1 = Label(root, text="Ergonomic Analysis using RULA and REBA", font=('Helvetica', 25, 'bold'), fg='blue', bg='#F1EB90')
 l1.pack(pady=100)  # Use pady for internal vertical padding
 
-
-
-
+from angle_calc import angle_calc
+import os
+import mimetypes
 
 def image_pose_estimation(name):
     img = cv2.imread(name)
