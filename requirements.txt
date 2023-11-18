@@ -1,0 +1,7 @@
+mediapipe==0.8.9.1
+numpy==1.21.6
+pandas==1.1.5
+tk-tools==0.14.0
+PyAutoGUI==0.9.53
+mime==0.1.0
+secure-smtplib==0.1.1
