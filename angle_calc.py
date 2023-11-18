@@ -2,12 +2,12 @@ import math
 import numpy as np
 profile=""
 import pandas as pd
-tablea=pd.read_csv('./Rula_score/TableA.csv')
-tableb=pd.read_csv('./Rula_score/TableB.csv')
-tablec=pd.read_csv('./Rula_score/TableC.csv')
-tablea1=pd.read_csv('./Reba_score/TableA.csv')
-tableb1=pd.read_csv('./Reba_score/TableB.csv')
-tablec1=pd.read_csv('./Reba_score/TableC.csv') 
+tablea=pd.read_csv('./Score/RULA_TableA.csv')
+tableb=pd.read_csv('./Score/RULA_TableB.csv')
+tablec=pd.read_csv('./Score/RULA_TableC.csv')
+tablea1=pd.read_csv('./Score/REBA_TableA.csv')
+tableb1=pd.read_csv('./Score/REBA_TableB.csv')
+tablec1=pd.read_csv('./Score/REBA_TableC.csv') 
 
 def rula_risk(point_score, wrist, trunk, upper_Shoulder, lower_Limb, neck, wrist_twist, legs, muscle_use, force_load_a, force_load_b, upper_body_muscle):
 
