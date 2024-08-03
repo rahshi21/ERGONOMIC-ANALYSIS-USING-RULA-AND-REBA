@@ -164,14 +164,71 @@ def generate_report():
         )
 
 def home_page():
-    st.title("Home Page")
-    st.markdown("Welcome to the Home Page. Here you can upload files and start posture analysis.")
-    # Place other content relevant to the home page here
-
-def details_page1():
-    st.title("Details Page")
+    st.title("Ergonomic Analysis")
     
-    st.header("RULA (Rapid Upper Limb Assessment)")
+    # Welcome Banner
+    # st.image("https://example.com/welcome-banner.jpg", use_column_width=True)
+    
+    st.markdown("""
+    Welcome to the Ergonomic Analysis Tool! This application is designed to help you assess and improve workplace ergonomics by analyzing posture using RULA (Rapid Upper Limb Assessment) and REBA (Rapid Entire Body Assessment).
+    
+    **What You Can Do Here:**
+    - **Upload Files:** Upload images or videos for posture analysis.
+    - **Start Analysis:** Initiate the analysis to get RULA and REBA scores for the uploaded files.
+    - **Generate Reports:** Create detailed reports based on the analysis.
+
+    **Instructions:**
+    1. Use the sidebar to upload an image or video file.
+    2. Click on "START POSTURE ANALYSIS" to begin the analysis.
+    3. Once the analysis is complete, click "GENERATE REPORT" to download the results.
+
+    **How It Helps:**
+    This tool helps in evaluating and improving workplace ergonomics, preventing musculoskeletal disorders, and enhancing overall safety and comfort.
+
+    **Features:**
+    - Real-time posture analysis
+    - Detailed RULA and REBA scoring
+    - Downloadable PDF reports
+
+    **Get Started:**
+    Use the sidebar to upload your files and start exploring the ergonomic analysis features!
+    """)
+    
+    st.subheader("Upload and Analyze")
+    st.markdown("""
+    Use the file uploader on the sidebar to select an image or video for analysis. 
+    Ensure the file format is correct and follow the on-screen instructions to start the posture analysis.
+    """)
+    
+    # Add a section for FAQs or Additional Help
+    st.subheader("Frequently Asked Questions")
+    st.markdown("""
+    **Q: What file formats are supported?**
+    A: You can upload images (JPG, JPEG, PNG) and videos (MP4, AVI) for analysis.
+
+    **Q: How do I start the analysis?**
+    A: After uploading your file, click the "START POSTURE ANALYSIS" button to begin.
+
+    **Q: How can I view the results?**
+    A: Once the analysis is complete, you can generate and download the report from the sidebar.
+    """)
+    
+    st.subheader("Contact Support")
+    st.markdown("""
+    If you have any questions or need assistance, feel free to reach out to our support team.
+    
+    **Email:** support@example.com
+    **Phone:** +123-456-7890
+    """)
+
+    # Optionally, add an interactive demo or video tutorial
+    st.subheader("Watch a Demo")
+    st.video("https://example.com/demo-video.mp4", format="mp4")
+
+
+
+def details_page1():    
+    st.title("RULA (Rapid Upper Limb Assessment)")
     st.markdown("""
     **Significance:**
     The Rapid Upper Limb Assessment (RULA) is a survey method that evaluates the postural risks associated with upper limb disorders. It helps in identifying musculoskeletal disorders in the upper limbs and neck.
@@ -181,10 +238,8 @@ def details_page1():
     st.image(r"https://github.com/rahshi21/ERGONOMIC-ANALYSIS-USING-RULA-AND-REBA/blob/main/RULA%20SCORE.png?raw=true", caption="RULA Evaluation Score", use_column_width=True)
     
 
-def details_page2():
-    st.title("Details Page")
-    
-    st.header("REBA (Rapid Entire Body Assessment)")
+def details_page2():    
+    st.title("REBA (Rapid Entire Body Assessment)")
     st.markdown("""
     **Significance:**
     The Rapid Entire Body Assessment (REBA) is used to assess the postural risk associated with the entire body. It is particularly useful in evaluating the risk of musculoskeletal disorders across various body segments.
@@ -195,7 +250,7 @@ def details_page2():
 
 
 def purpose_page():
-    st.title("Purpose Page")
+    st.title("Purpose of this Tool")
     
     st.markdown("""
     **Introduction:**
@@ -250,12 +305,12 @@ if page == "Home":
     uploaded_file = st.sidebar.file_uploader("Choose an image or video...", type=["jpg", "jpeg", "png", "mp4", "avi"])
 
     # Live Webcam Analysis Buttons
-    if st.sidebar.button("START POSTURE ANALYSIS"):
+    if st.sidebar.button("START LIVE POSTURE ANALYSIS"):
         st.session_state.video_processing_active = True
         st.session_state.video_processing_done = False
         video_pose_estimation(0, process_interval=20)
 
-    if st.sidebar.button("STOP POSTURE ANALYSIS"):
+    if st.sidebar.button("STOP LIVE POSTURE ANALYSIS"):
         st.session_state.video_processing_active = False
         st.session_state.video_processing_done = True
 
