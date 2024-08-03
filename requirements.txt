@@ -6,3 +6,4 @@ secure-smtplib==0.1.1
 fpdf
 streamlit==1.18.0
 matplotlib==3.4.3
+altair==4.2.0
