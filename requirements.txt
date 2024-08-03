@@ -1,0 +1,8 @@
+mediapipe==0.8.9.1
+numpy==1.21.6
+pandas==1.1.5
+mime==0.1.0
+secure-smtplib==0.1.1
+fpdf
+streamlit==1.18.0
+matplotlib==3.4.3
